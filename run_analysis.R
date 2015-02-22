@@ -45,15 +45,16 @@ headings <- read.table("features.txt")
 headingReduced <- headings[c(1:6, 41:46, 81:86, 121:126, 161:166, 201:202, 214:215, 227:228, 240:241, 253:254, 266:271, 345:350, 424:429, 503:504, 516:517, 529:530, 542:543),]
 
 colnames(x_both1) <- headingReduced[,2]
+colnames(subject_both) <- "Subject"
 
-#bind the y data to the x data to give the activity for each measurement
-completeSet <- cbind(y_both, x_both1)
+#bind the y data, subject and the x data to give the activity for each measurement
+completeSet <- cbind(subject_both, y_both, x_both1)
 
 #melt the set so that the mean can be calculated with cast
-completeSet1 <- melt(completeSet)
+completeSet1 <- melt(completeSet, id=c("Subject", "Activity"))
 
-#cast the data and produce the mean for each measurement
-completeSet2 <- dcast(completeSet1, Activity ~ variable,mean)
+#cast the data and produce the mean for each measurement and subject
+completeSet2 <- dcast(completeSet1, Subject + Activity ~ variable,mean)
 
 #write the data to a .txt file
 write.table(completeSet2, file="tidySet.txt", row.name=FALSE)
