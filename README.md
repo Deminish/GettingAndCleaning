@@ -24,11 +24,11 @@ Takes the names of each of the measured variables from the "features.txt" file
 
 Appends the variable names to the data set
 
-Binds the Activity onto the measured variables
+Binds the Activity and subject ID onto the measured variables
 
 Melts the data into long form
 
-Casts the data so that the means can be calculated for each variable for each activity
+Casts the data so that the means can be calculated for each variable for each activity and subject
 
 Writes the tidy set to "tidySet.txt"
 
