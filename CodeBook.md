@@ -28,11 +28,11 @@ For each record in the dataset it is provided:
 
 
 Activity:
-The activity that was being performed for each measurement:
-Laying: The subject was lying down
-Sitting: The subject was sitting down
-Standing: The subject was standing up
-Walking: The subject was walking
-WalkingDown: The subject was walking downstairs
-WalkingUp: The subject was walking upstairs
+ The activity that was being performed for each measurement:
+- Laying: The subject was lying down
+- Sitting: The subject was sitting down
+- Standing: The subject was standing up
+- Walking: The subject was walking
+- WalkingDown: The subject was walking downstairs
+- WalkingUp: The subject was walking upstairs
 
